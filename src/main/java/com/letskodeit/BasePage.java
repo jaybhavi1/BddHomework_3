@@ -1,6 +1,7 @@
 package com.letskodeit;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 /**
  * @author Jay Vaghani on 26/04/2017.
@@ -9,4 +10,8 @@ import org.openqa.selenium.WebDriver;
 public class BasePage
 {
     public static WebDriver driver;
+
+    BasePage(){
+        PageFactory.initElements(driver,this);
+    }
 }

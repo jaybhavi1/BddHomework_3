@@ -1,6 +1,7 @@
 package com.letskodeit;
 
-import org.junit.Before;
+import cucumber.annotation.After;
+import cucumber.annotation.Before;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -17,6 +18,11 @@ public class BaseTest extends BasePage
         driver.manage().window().maximize();
         driver.get("https://letskodeit.teachable.com");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
+    @After
+    public void closeBrowser(){
+        driver.quit();
     }
 
 }
